@@ -6,6 +6,7 @@ const htmlStructure = {
 	popup1: document.querySelector('.popup1'),
 	shadow: document.querySelector('.shadow'),
 	closeBtn: document.getElementsByClassName('close-popup'),
+	body: document.querySelector('body'),
 };
 const secondPopup = {
 	createPopup: function () {
@@ -15,10 +16,7 @@ const secondPopup = {
 		const btn = document.createElement('button');
 		h2.textContent = `I'm a modal window`;
 		btn.textContent = 'X';
-		p.textContent = `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid,
-		voluptatum. Quam porro sapiente, necessitatibus eos, repudiandae sunt
-		maxime ipsum libero possimus vitae, ratione doloribus tenetur labore
-		dolorum quia cum. Aspernatur?`;
+		p.textContent = `Close me by clicking 'Escape', shadow layout or click on 'X' button.`;
 		h2.classList.add('title');
 		p.classList.add('text');
 		div.classList.add('popup2');
@@ -28,8 +26,7 @@ const secondPopup = {
 	},
 };
 const arr = [];
-const { btn1, btn2, wrapper, popup1, shadow, closeBtn, closePop } =
-	htmlStructure;
+const { btn1, btn2, wrapper, popup1, shadow, closeBtn, body } = htmlStructure;
 
 arr.push(closeBtn);
 
@@ -59,6 +56,9 @@ function closePopup() {
 btn1.addEventListener('click', showPopup1);
 btn2.addEventListener('click', showPopup2);
 shadow.addEventListener('click', closePopup);
+document.addEventListener('keydown', e => {
+	if (e.key === 'Escape') closePopup();
+});
 
 for (let i = 0; i < closeBtn.length; i++) {
 	closeBtn[i].addEventListener('click', closePopup);
