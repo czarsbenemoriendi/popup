@@ -1,6 +1,6 @@
 # popup
 
-Link: https://6311df7828370c012e81a800--zippy-starburst-96c8ad.netlify.app/
+Link: https://zippy-starburst-96c8ad.netlify.app/
 
 In this project i created popup, which shows while user click on button.
 
